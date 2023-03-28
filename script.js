@@ -24,11 +24,11 @@ let speciesList = document.getElementById('speciesList');
 
       const getSpeciesList = async () => {
         let requestString =
-          'https://perenual.com/api/species-list?page=1&key=sk-Jeg26422c2062a39f369';
+          'https://perenual.com/api/species-list?page=1&key=sk-1iiW6422fd6045145374';
 
         let data = await fetch(requestString);
         let response = await data.json();
-
+//console.log(response)
         response.data.forEach((species) => {
           let li = document.createElement('li');
           let img = document.createElement('img');
@@ -75,12 +75,11 @@ let speciesList = document.getElementById('speciesList');
           p5.textContent = `Lumière du soleil : ${species.sunlight}`;
           li.appendChild(p5);
 
-        //   let p6 = document.createElement('p');
-        //   p6.textContent = `Espèce : ${species.species}`;
-        //   li.appendChild(p6);
+          // let imgF = document.createElement('imgF');
+          //  imgF.src = "arrow_forward_FILL0_wght400_GRAD0_opsz48.png";
+          //  li.appendChild(imgF);
 
           speciesList.appendChild(li);
         });
       };
-
       getSpeciesList();
