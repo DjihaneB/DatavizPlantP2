@@ -107,7 +107,7 @@ const getDetails = async () => {
     let li = document.createElement('li');
     let requestString =
 
-      `https://perenual.com/api/species/details/${i+1}?key=sk-nu9a6424163cc8fbc305`;
+      `https://perenual.com/api/species/details/${i+1}?key=sk-k3IQ64244b03ee7df305`;
 
 
     let data = await fetch(requestString);
@@ -151,7 +151,7 @@ getDetails()
 let speciesList = document.getElementById('speciesList');
 const getSpeciesList = async () => {
 
-  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-nu9a6424163cc8fbc305';
+  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-k3IQ64244b03ee7df305';
 
 
   let data = await fetch(requestString);
@@ -190,24 +190,10 @@ const getSpeciesList = async () => {
     p5.textContent = `Lumière du soleil : ${species.sunlight}`;
     li.appendChild(p5);
 
-    let button = document.createElement('button');
-    button.textContent = "Afficher plus d'informations";
-    button.addEventListener('click', () => {
-    let detailsHtml = `
-    <li>
-      <h3>Plus d'informations sur ${species.scientific_name} :</h3>
-      <p>${response.type}</p>
-      <p>${response.edible_fruit}</p>
-      <p>${response.medicinal_use}</p>
-      <p>${response.origin}</p>
-         
-    </li>
-  `;
-    li.insertAdjacentHTML('afterend', detailsHtml);
-    });
-    li.appendChild(button);
- 
 
+
+
+    
     speciesList.appendChild(li);
   });
   };

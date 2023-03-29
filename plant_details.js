@@ -7,7 +7,7 @@ const getDetails = async () => {
     let li = document.createElement('li');
     let requestString =
 
-      `https://perenual.com/api/species/details/${i+1}?key=sk-nu9a6424163cc8fbc305`;
+      `https://perenual.com/api/species/details/${i+1}?key=sk-huqj6424381e9dfbe381`;
 
 
     let data = await fetch(requestString);
