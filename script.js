@@ -105,7 +105,9 @@ let speciesDetail = document.getElementById('speciesDetail');
 const getDetails = async () => {
     for (let i = 0; i <= 1; i++) { 
     let li = document.createElement('li');
+
     let requestString =`https://perenual.com/api/species/details/${i+1}?key=sk-LzN664244f20610d3385`;
+
     let data = await fetch(requestString);
     let response = await data.json();
     console.log(response)
@@ -143,7 +145,11 @@ getDetails()
 
 let speciesList = document.getElementById('speciesList');
 const getSpeciesList = async () => {
-  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-LzN664244f20610d3385';
+
+  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-k3IQ64244b03ee7df305';
+
+
+
   let data = await fetch(requestString);
   let response = await data.json();
 
@@ -180,6 +186,7 @@ const getSpeciesList = async () => {
     p5.textContent = `Lumière du soleil : ${species.sunlight}`;
     li.appendChild(p5);
 
+
     let button = document.createElement('button');
     button.textContent = "Afficher plus d'informations";
     button.value = index
@@ -211,6 +218,7 @@ const getSpeciesList = async () => {
     
 
     });
+
     speciesList.appendChild(li);
   })
 }
