@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@100&display=swap');
+
+
+
+
 .nav_bar {
   display: flex;
-  background-color: #45542C;
+  background-color: #468653;
   align-items: center;
 }
 nav a {
@@ -45,20 +50,32 @@ body {
       border: 1px solid #ddd;
       border-radius: 5px;
       overflow: hidden;
-      background-color: #fff;
+      /* background-color: #fff; */
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
 
     li:hover {
       transform: translateY(-5px);
+
+      /* afficher l'image */
+
     }
 
     img {
-      width: 100%;
-      height: 50%;
+      width: 90%;
+      height: 50% ;
       object-fit: cover;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
       border-radius: 5px 5px 0 0;
+      border-radius: 5px;
+      
+    }
+
+    img:hover {
+      transform: scale(1.1);
     }
 
     h2 {
@@ -75,8 +92,26 @@ body {
     }
 
 
-    /* #imgF {
-      width: 20%;
-      height: 20%;
-      justify-content: center
-    } */
+    button {
+      position: absolute;
+      bottom: 10px;
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #468653;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer; /* ajout d'un curseur*/
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    button:hover {
+      background-color: #b6ceba;
+    
+    }
+    
+    
+    
+    
+    
