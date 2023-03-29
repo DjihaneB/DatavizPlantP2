@@ -103,18 +103,15 @@
 let speciesDetail = document.getElementById('speciesDetail');
 
 const getDetails = async () => {
-     for (let i = 0; i <= 1; i++) { 
+    for (let i = 0; i <= 1; i++) { 
     let li = document.createElement('li');
-    let requestString =
 
-      `https://perenual.com/api/species/details/${i+1}?key=sk-k3IQ64244b03ee7df305`;
-
+    let requestString =`https://perenual.com/api/species/details/${i+1}?key=sk-LzN664244f20610d3385`;
 
     let data = await fetch(requestString);
     let response = await data.json();
     console.log(response)
-  
-    
+
     // default_image, common_name, type, edible_fruit, medicinal_use, origin
     let img = document.createElement('img')
     img.src = response.default_image.original_url;
@@ -146,18 +143,17 @@ const getDetails = async () => {
 
 getDetails()
 
-
-
 let speciesList = document.getElementById('speciesList');
 const getSpeciesList = async () => {
 
   let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-k3IQ64244b03ee7df305';
 
 
+
   let data = await fetch(requestString);
   let response = await data.json();
 
-  response.data.forEach((species) => {
+  response.data.forEach((species, index) => {
     let li = document.createElement('li');
     li.style.position = 'relative'; // Ajout d'une position relative au li pour pouvoir positionner le bouton en bas
 
@@ -191,11 +187,44 @@ const getSpeciesList = async () => {
     li.appendChild(p5);
 
 
+    let button = document.createElement('button');
+    button.textContent = "Afficher plus d'informations";
+    button.value = index
+    li.appendChild(button);
+    button.addEventListener('click', (event) => {
+      console.log(event.target.value)
+      console.log(response.data[event.target.value])
+      document.getElementById('info').classList.remove('d-none')
 
+      let pa = document.createElement('p')
+      pa.innerHTML = response.data[event.target.value].cycle
 
+      document.getElementById('info').appendChild(pa)
+      //   let detailsHtml =
+      //   ` 1:
+      //   <li>
+      //     <h3 style='color:red'>Plus d'informations sur ${species.scientific_name} :</h3>
+      //     <p>${response.type}</p>
+      //     <p>${response.edible_fruit}</p>
+      //     <p>${response.medicinal_use}</p>
+      //     <p>${response.origin}</p>
+      //     <button>${'&#11144;'}</button>
+
+      //   </li>
+      // `;
+      //       li.insertAdjacentHTML('afterend', detailsHtml);
+
+      //   });
     
+
+    });
+
     speciesList.appendChild(li);
-  });
-  };
+  })
+}
+
+document.getElementById('close').addEventListener('click', (e) => {
+  document.getElementById('info').classList.add('d-none')
+})
 getSpeciesList();
 
