@@ -3,20 +3,15 @@
 let speciesDetail = document.getElementById('speciesDetail');
 
 const getDetails = async () => {
- 
-
-//let new_data=[];
-  for (let i = 0; i <= 30; i++) { 
+     for (let i = 0; i <= 30; i++) { 
     let li = document.createElement('li');
     let requestString =
-      `https://perenual.com/api/species/details/${i+1}?key=sk-1iiW6422fd6045145374`;
+      `https://perenual.com/api/species/details/${i+1}?key=sk-J0Dv642409cd237d0306`;
 
     let data = await fetch(requestString);
     let response = await data.json();
     console.log(response)
-  //  new_data.push(response);
-    //console.log(new_data)
-    // for each ?
+  
     
     // default_image, common_name, type, edible_fruit, medicinal_use, origin
     let img = document.createElement('img')
