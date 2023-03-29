@@ -106,7 +106,9 @@ const getDetails = async () => {
      for (let i = 0; i <= 1; i++) { 
     let li = document.createElement('li');
     let requestString =
-      `https://perenual.com/api/species/details/${i+1}?key=sk-Lx0M642415d077d46306`;
+
+      `https://perenual.com/api/species/details/${i+1}?key=sk-nu9a6424163cc8fbc305`;
+
 
     let data = await fetch(requestString);
     let response = await data.json();
@@ -148,7 +150,9 @@ getDetails()
 
 let speciesList = document.getElementById('speciesList');
 const getSpeciesList = async () => {
-  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-8Ceq642419d24d97b379';
+
+  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-nu9a6424163cc8fbc305';
+
 
   let data = await fetch(requestString);
   let response = await data.json();
