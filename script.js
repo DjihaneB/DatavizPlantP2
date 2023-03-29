@@ -106,7 +106,7 @@ const getDetails = async () => {
     for (let i = 0; i <= 1; i++) { 
     let li = document.createElement('li');
 
-    let requestString =`https://perenual.com/api/species/details/${i+1}?key=sk-LzN664244f20610d3385`;
+    let requestString =`https://perenual.com/api/species/details/${i+1}?key=sk-2dGy6424a98472811391`;
 
     let data = await fetch(requestString);
     let response = await data.json();
@@ -146,7 +146,7 @@ getDetails()
 let speciesList = document.getElementById('speciesList');
 const getSpeciesList = async () => {
 
-  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-k3IQ64244b03ee7df305';
+  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-2dGy6424a98472811391';
 
 
 
@@ -166,25 +166,25 @@ const getSpeciesList = async () => {
     h2.textContent = species.common_name;
     li.appendChild(h2);
 
-    let p1 = document.createElement('p');
-    p1.textContent = `Nom scientifique : ${species.scientific_name}`;
-    li.appendChild(p1);
+    // let p1 = document.createElement('p');
+    // p1.textContent = `Nom scientifique : ${species.scientific_name}`;
+    // li.appendChild(p1);
 
-    let p2 = document.createElement('p');
-    p2.textContent = `Autre nom : ${species.other_name}`;
-    li.appendChild(p2);
+    // let p2 = document.createElement('p');
+    // p2.textContent = `Autre nom : ${species.other_name}`;
+    // li.appendChild(p2);
 
-    let p3 = document.createElement('p');
-    p3.textContent = `Cycle : ${species.cycle}`;
-    li.appendChild(p3);
+    // let p3 = document.createElement('p');
+    // p3.textContent = `Cycle : ${species.cycle}`;
+    // li.appendChild(p3);
 
-    let p4 = document.createElement('p');
-    p4.textContent = `Arrosage : ${species.watering}`;
-    li.appendChild(p4);
+    // let p4 = document.createElement('p');
+    // p4.textContent = `Arrosage : ${species.watering}`;
+    // li.appendChild(p4);
 
-    let p5 = document.createElement('p');
-    p5.textContent = `Lumière du soleil : ${species.sunlight}`;
-    li.appendChild(p5);
+    // let p5 = document.createElement('p');
+    // p5.textContent = `Lumière du soleil : ${species.sunlight}`;
+    // li.appendChild(p5);
 
 
     let button = document.createElement('button');
@@ -194,27 +194,38 @@ const getSpeciesList = async () => {
     button.addEventListener('click', (event) => {
       console.log(event.target.value)
       console.log(response.data[event.target.value])
-      document.getElementById('info').classList.remove('d-none')
+      const getInfo = document.getElementById('info')
+      getInfo.classList.remove('d-none');
 
-      let pa = document.createElement('p')
-      pa.innerHTML = response.data[event.target.value].cycle
-
-      document.getElementById('info').appendChild(pa)
-      //   let detailsHtml =
-      //   ` 1:
-      //   <li>
-      //     <h3 style='color:red'>Plus d'informations sur ${species.scientific_name} :</h3>
-      //     <p>${response.type}</p>
-      //     <p>${response.edible_fruit}</p>
-      //     <p>${response.medicinal_use}</p>
-      //     <p>${response.origin}</p>
-      //     <button>${'&#11144;'}</button>
-
-      //   </li>
-      // `;
-      //       li.insertAdjacentHTML('afterend', detailsHtml);
-
-      //   });
+      let p1 = document.createElement('span');
+      p1.id = "scientific_name";
+      p1.innerHTML = `Nom scientique : ${response.data[event.target.value].scientific_name}`;
+      getInfo.appendChild(p1);
+      
+      let p2 = document.createElement('span');
+      p2.id = "other_name"
+      p2.innerHTML = `Aussi appelé : ${response.data[event.target.value].other_name}`;
+      getInfo.appendChild(p2);
+  
+      let p4 = document.createElement('span');
+      p4.id = "watering"
+      p4.textContent = `Arrosage conseillé : ${response.data[event.target.value].watering}`;
+      getInfo.appendChild(p4);
+  
+      let p5 = document.createElement('span');
+      p5.id = "sunlight"
+      p5.textContent = `Exposition optimale : ${response.data[event.target.value].sunlight}`;
+      getInfo.appendChild(p5);
+      
+      let p3 = document.createElement('span');
+      p3.id = "cycle"
+      p3.textContent = `Cycle de vie : ${response.data[event.target.value].cycle}`;
+      getInfo.appendChild(p3);
+      
+      // let pa = document.getElementById("cycle")
+      // pa.innerHTML = response.data[event.target.value].cycle
+      // document.getElementById('info').appendChild(pa)
+      
     
 
     });
@@ -226,5 +237,6 @@ const getSpeciesList = async () => {
 document.getElementById('close').addEventListener('click', (e) => {
   document.getElementById('info').classList.add('d-none')
 })
+
 getSpeciesList();
 

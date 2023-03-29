@@ -5,7 +5,13 @@
   display: flex;
   background-color: #468653;
   align-items: center;
+  position : fixed;
+  width : 100%;
+  top:0;
+  /* margin-bottom: 200px; */
+  z-index: 1;
 }
+
 nav a {
   color: white;
   padding: 0 0.5rem;
@@ -18,19 +24,32 @@ nav div {
   flex: 1;
   padding: 1rem;
 }
+
+nav a:hover{
+  color: #ffc4fc;
+}
+
 .nav_bar_R{
   text-align: right;
 }
+
+ .team a:hover{
+border : solid white;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #F2FFF5;
-  margin: 0;
-  padding: 0;
+  padding-top: 100px;
+  position : relative;
+  z-index: 2;
 }
 
 h1 {
   text-align: center;
-  margin-top: 20px;
+  justify-content: end;
+  height: 80px;
+  font-style:#45542C;
 }
 
 ul {
@@ -40,6 +59,7 @@ ul {
   margin: 0;
   padding: 0;
   justify-content: center;
+ 
 }
 
 li {
@@ -59,6 +79,7 @@ li:hover {
 
 li:hover button{
 background-color: #45542C;
+border-radius: 4px;
 }
 
 img {
@@ -66,16 +87,14 @@ img {
   height: 50% ;
   object-fit: cover;
   margin: 1rem;
-  /* margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem; */
   border-radius: 5px 5px 0 0;
   border-radius: 5px;
-  
+  padding-bottom: 1rem;
 }
 
 li:hover img{
   transform: scale(1.15);
+  padding-bottom :1rem;
 }
 
 h2 {
@@ -101,10 +120,65 @@ button {
   color: white;
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer; /* ajout d'un curseur*/
   transition: background-color 0.3s ease-in-out;
 }
+
+#info {
+  width: 400px;
+  height: 400px;
+  background-color: #8F9885;
+  z-index: 3;
+  padding : 1rem;
+  margin: auto 15px;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  line-height:2;
+
+}
+
+#info span{
+  color: white;
+  /* display : flex; */
+  border : solid white;
+  margin: 5px;
+  padding: 5px;
+  align-items: center;
+}
+
+#info span:hover{
+  box-shadow: 2px 2px 5px #45542C;
+}
+
+.d-none {
+  display: none;
+}
+
+
+#cycle{
+  color:#45542C;
+
+}
+
+#titre_details{
+  align-items: center;
+  font-size: 30px;
+  color : #292F1A;
+}
+
+/* 
+#close{
+  
+  margin-top: 3px;
+  
+} */
+
+
+
 /* ---------------------------Test---------------------------------- */
 
 
@@ -198,15 +272,4 @@ button {
   color: #ffffff;
 }
 
-
-#info {
-  width: 80vh;
-  height: 80vh;
-  background-color: red;
-  position: absolute;
-  margin: auto 15px;
-}
-
-.d-none {
-  display: none;
-}
+/* ------------------------------------------------------------ */
