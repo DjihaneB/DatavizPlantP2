@@ -103,10 +103,10 @@
 let speciesDetail = document.getElementById('speciesDetail');
 
 const getDetails = async () => {
-     for (let i = 0; i <= 30; i++) { 
+     for (let i = 0; i <= 1; i++) { 
     let li = document.createElement('li');
     let requestString =
-      `https://perenual.com/api/species/details/${i+1}?key=sk-J0Dv642409cd237d0306`;
+      `https://perenual.com/api/species/details/${i+1}?key=sk-Lx0M642415d077d46306`;
 
     let data = await fetch(requestString);
     let response = await data.json();
@@ -148,7 +148,7 @@ getDetails()
 
 let speciesList = document.getElementById('speciesList');
 const getSpeciesList = async () => {
-  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-J0Dv642409cd237d0306';
+  let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-8Ceq642419d24d97b379';
 
   let data = await fetch(requestString);
   let response = await data.json();
@@ -188,10 +188,19 @@ const getSpeciesList = async () => {
 
     let button = document.createElement('button');
     button.textContent = "Afficher plus d'informations";
-    // button.addEventListener('click', () => {
-    //   let div = document.createElement('div');
-    //   li.appendChild(div);
-    // });
+    button.addEventListener('click', () => {
+    let detailsHtml = `
+    <li>
+      <h3>Plus d'informations sur ${species.scientific_name} :</h3>
+      <p>${response.type}</p>
+      <p>${response.edible_fruit}</p>
+      <p>${response.medicinal_use}</p>
+      <p>${response.origin}</p>
+         
+    </li>
+  `;
+    li.insertAdjacentHTML('afterend', detailsHtml);
+    });
     li.appendChild(button);
  
 
