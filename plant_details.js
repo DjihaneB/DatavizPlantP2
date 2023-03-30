@@ -7,7 +7,7 @@ const getDetails = async () => {
     let li = document.createElement('li');
     let requestString =
 
-      `https://perenual.com/api/species/details/${i+1}?key=sk-huqj6424381e9dfbe381`;
+      `https://perenual.com/api/species/details/${i+1}?key=sk-3BFj6425368c80a04379`;
 
 
 
@@ -46,3 +46,20 @@ const getDetails = async () => {
 };
 
 getDetails()
+
+
+ //   let detailsHtml =
+      //   ` 1:
+      //   <li>
+      //     <h3 style='color:red'>Plus d'informations sur ${species.scientific_name} :</h3>
+      //     <p>${response.type}</p>
+      //     <p>${response.edible_fruit}</p>
+      //     <p>${response.medicinal_use}</p>
+      //     <p>${response.origin}</p>
+      //     <button>${'&#11144;'}</button>
+
+      //   </li>
+      // `;
+      //       li.insertAdjacentHTML('afterend', detailsHtml);
+
+      //   });
