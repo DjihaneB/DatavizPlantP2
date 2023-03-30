@@ -32,6 +32,10 @@ nav div {
   text-align: right;
 }
 
+.nav_bar_R a{
+  padding: 50px;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #F2FFF5;

@@ -10,6 +10,7 @@
   top:0;
   /* margin-bottom: 200px; */
   z-index: 1;
+  height:100px;
 }
 
 nav a {
@@ -33,6 +34,14 @@ nav a:hover{
   text-align: right;
 }
 
+.nav_bar_R a{
+  padding: 20px;
+}
+
+.logo{
+  padding:2px
+}
+
  .team a:hover{
 border : solid white;
 }
@@ -49,6 +58,7 @@ h1 {
   text-align: center;
   justify-content: end;
   height: 80px;
+  padding : 5px;
   font-style:#45542C;
 }
 
