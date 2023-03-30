@@ -10,6 +10,7 @@ const getDetails = async () => {
       `https://perenual.com/api/species/details/${i+1}?key=sk-3BFj6425368c80a04379`;
 
 
+
     let data = await fetch(requestString);
     let response = await data.json();
     console.log(response)
