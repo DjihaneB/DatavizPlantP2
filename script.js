@@ -1,7 +1,9 @@
+
 let speciesList = document.getElementById('speciesList');
 const getSpeciesList = async () => {
 
   let requestString = 'https://perenual.com/api/species-list?page=1&key=sk-Jeg26422c2062a39f369';
+
 
   let data = await fetch(requestString);
   let response = await data.json();
@@ -18,6 +20,7 @@ const getSpeciesList = async () => {
     let h2 = document.createElement('h2');
     h2.textContent = species.common_name;
     li.appendChild(h2);
+
 
     let button = document.createElement('button');
     button.textContent = "Détails";
@@ -48,6 +51,7 @@ const getSpeciesList = async () => {
       p3.textContent = `Cycle : ${species.cycle}`;
       list.appendChild(p3);
 
+
       let p4 = document.createElement('p');
       p4.textContent = `Arrosage : ${species.watering}`;
       list.appendChild(p4);
@@ -64,6 +68,7 @@ const getSpeciesList = async () => {
     speciesList.appendChild(li);
   });
 };
+
 
 getSpeciesList();
 
